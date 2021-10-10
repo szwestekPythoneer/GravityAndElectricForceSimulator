@@ -6,8 +6,8 @@ import graphic
 import time
 
 
-features = ((937e6, -physical_utils.e, 'yellow'),
-            (511e3, physical_utils.e, 'blue'))
+features = ((1, -physical_utils.e, 'white'),
+            (1, -physical_utils.e, 'white'))
 
 
 particles = [objects.Object(app_utils.chooseRandomPosition(), app_utils.chooseMassLoadColor (features))

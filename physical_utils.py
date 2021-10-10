@@ -1,6 +1,6 @@
 import math
 import math_utils
-G = 6.6743015e-11
+G = 1  # 6.6743015e-11
 c = 30  # 29.9792458
 k = -1000000  # -8.99e9
 miZero = 1e-7
@@ -8,7 +8,7 @@ e = 1  # -1.602176634e-19
 h = 6.62607004081e-34
 
 
-def gravityAcc (itsMass, itsPosition, myPosition):
+def gravityAcc (itsMass, myPosition, itsPosition):
     rVector = math_utils.rVector(itsPosition, myPosition)
     rVectorOne = math_utils.rVectorOne(rVector)
     rScalarSquared = math_utils.rScalarSquared(rVector)

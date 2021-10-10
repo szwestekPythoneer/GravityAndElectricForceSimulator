@@ -13,8 +13,7 @@ def countAcc (particles):
         acc = np.array([0, 0, 0])
         for element in particles:
             if particles.index(particle) != particles.index(element):
-                acc = acc + physical_utils.electricAcc(particle.position, element.position, particle.load, element.load,
-                                                       particle.mass)
+                acc = acc + physical_utils.gravityAcc(element.mass, particle.position, element.position)
             speedScalar = math_utils.rScalar(particle.speed)
             gamma3 = physical_utils.kineticDilatation(speedScalar) ** 3
             acc = acc * gamma3
