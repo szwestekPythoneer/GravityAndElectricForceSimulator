@@ -27,3 +27,9 @@ def countAcc (particles):
 def chooseMassLoadColor(data):
     choice = random.choice(data)
     return [choice [0], choice [1], choice [2]]
+
+
+def chooseRandomSpeed():
+    return np.array ([random.randint(0, 1) / 100,
+                      random.randint(0, 1) / 100,
+                      random.randint(0, 1) / 100])

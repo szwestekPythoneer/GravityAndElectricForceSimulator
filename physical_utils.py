@@ -1,8 +1,8 @@
 import math
 import math_utils
 G = 6.6743015e-11
-c = 3000  # 29.9792458
-k = -100000000  # -8.99e9
+c = 30  # 29.9792458
+k = -100000  # -8.99e9
 miZero = 1e-7
 e = -1  # -1.602176634e-19
 h = 6.62607004081e-34
@@ -62,7 +62,8 @@ def insideAcc (ep, r):
 
 
 def evToKg (number):
-    return number * abs (e) / c ** 2
+    # rzeczywiście /c**2 tutaj bez tego by mieć dżul symulatorowy (evToJ)
+    return number * abs (e)  # / c ** 2
 
 
 def electrodynamicAcc (myPosition, itsPosition, myLoad, itsLoad, myMass, itsSpeed, time):

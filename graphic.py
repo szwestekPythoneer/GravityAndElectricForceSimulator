@@ -25,3 +25,7 @@ def countSize (particles):
             particle.size = 7
         elif particle.position [2] > 400:
             particle.size = 11
+
+
+def show_text (e0):
+    return screen.create_text(60, 30, fill='white', text='E0 = {} J\nEp = '.format(e0))
