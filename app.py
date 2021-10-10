@@ -6,13 +6,12 @@ import graphic
 import time
 
 
-features = ((3750e6, -physical_utils.e, 'yellow'),
-            (511e3, physical_utils.e, 'blue'),
+features = ((937e6, -physical_utils.e, 'yellow'),
             (511e3, physical_utils.e, 'blue'))
 
 
 particles = [objects.Object(app_utils.chooseRandomPosition(), app_utils.chooseMassLoadColor (features))
-             for i in range (0, 6)]
+             for i in range (0, 4)]
 
 
 energyMemory = energy_counters.EnergyCounter()
@@ -33,4 +32,4 @@ while True:
     graphic.move (particles)
     graphic.countSize(particles)
     graphic.screen.update ()
-    time.sleep (0.1)
+    # time.sleep (0.1)
