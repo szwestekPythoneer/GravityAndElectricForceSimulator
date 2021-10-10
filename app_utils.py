@@ -10,7 +10,7 @@ def chooseRandomPosition ():
 
 def chooseRandomSpeed ():
     # return np.array([0, 0, 0])
-    return np.array([random.randint(-4, 4) / 10, random.randint(-4, 4) / 10, random.randint(-4, 4) / 10])
+    return np.array([random.randint(-1, 1) / 10, random.randint(-1, 1) / 10, random.randint(-1, 1) / 10])
 
 
 def countAcc (particles):

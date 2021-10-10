@@ -2,13 +2,26 @@ from tkinter import *
 root = Tk ()
 screen = Canvas (root, width=1300, height=700, bg='black')
 screen.pack ()
-size = 5
 
 
-def show (particles, axis=1):
+def show (particles):
     for particle in particles:
-        screen.delete('all')
-        screen.create_oval(particle.position [0], particle.position [axis],
-                           particle.position [0] + size, particle.position [axis] + size,
-                           fill=particle.color)
-        screen.update ()
+        particle.graphicRepr = screen.create_oval(particle.position [0], particle.position [1],
+                                                  particle.position [0] + particle.size,
+                                                  particle.position [1] + particle.size, fill=particle.color)
+
+
+def move (particles):
+    for particle in particles:
+        screen.coords (particle.graphicRepr, particle.position [0], particle.position [1],
+                       particle.position [0] + particle.size, particle.position [1] + particle.size)
+
+
+def countSize (particles):
+    for particle in particles:
+        if particle.position [2] < 200:
+            particle.size = 3
+        elif 200 <= particle.position [2] <= 400:
+            particle.size = 7
+        elif particle.position [2] > 400:
+            particle.size = 11

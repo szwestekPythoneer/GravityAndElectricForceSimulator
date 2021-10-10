@@ -5,3 +5,5 @@ class Object:
         self.load = load
         self.speed = speed
         self.color = color
+        self.graphicRepr = None
+        self.size = 5
