@@ -27,5 +27,5 @@ def countSize (particles):
             particle.size = 11
 
 
-def show_text (e0):
-    return screen.create_text(60, 30, fill='white', text='E0 = {} J\nEp = '.format(e0))
+def show_text (e0, Ep):
+    return screen.create_text(60, 30, fill='white', text='E0 = {} J\nEp = {} fJ'.format(e0, int (Ep * 1000000000000000)))

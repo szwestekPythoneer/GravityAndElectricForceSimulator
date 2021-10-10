@@ -15,10 +15,10 @@ def gravityAcc (itsMass, itsPosition, myPosition):
     return G * itsMass * rVectorOne / rScalarSquared
 
 
-def potentialEnergy (itsLoad, myLoad, itsPosition, myPosition):
+def potentialEnergy (myLoad, itsLoad, myPosition, itsPosition):
     rVector = math_utils.rVector(itsPosition, myPosition)
     rScalarSquared = math_utils.rScalarSquared(rVector)
-    return k * itsLoad * myLoad * rVector / rScalarSquared
+    return -k * itsLoad * myLoad * rVector / rScalarSquared
 
 
 def energyToMass (energy):
