@@ -2,7 +2,7 @@ from tkinter import *
 root = Tk ()
 screen = Canvas (root, width=1300, height=700, bg='black')
 screen.pack ()
-size = 3
+size = 5
 
 
 def show (particles, axis=1):
@@ -10,5 +10,5 @@ def show (particles, axis=1):
         screen.delete('all')
         screen.create_oval(particle.position [0], particle.position [axis],
                            particle.position [0] + size, particle.position [axis] + size,
-                           fill='white')
+                           fill=particle.color)
         screen.update ()
