@@ -1,7 +1,7 @@
 import math
 import math_utils
 G = 6.6743015e-11
-c = 299792458
+c = 29.9792458
 k = -8.99e9
 miZero = 1e-7
 e = -1.602176634e-19
