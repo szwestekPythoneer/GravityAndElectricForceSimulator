@@ -8,11 +8,6 @@ def chooseRandomPosition ():
     return np.array([random.randint(0, 1300), random.randint(0, 700), random.randint(0, 700)])
 
 
-def chooseRandomSpeed ():
-    # return np.array([0, 0, 0])
-    return np.array([random.randint(-1, 1) / 10, random.randint(-1, 1) / 10, random.randint(-1, 1) / 10])
-
-
 def countAcc (particles):
     for particle in particles:
         acc = np.array([0, 0, 0])
@@ -27,3 +22,8 @@ def countAcc (particles):
                 acc = math_utils.rVectorOne(acc) * physical_utils.c
         particle.speed = acc + particle.speed
         particle.position = particle.position + particle.speed
+
+
+def chooseMassLoadColor(data):
+    choice = random.choice(data)
+    return [choice [0], choice [1], choice [2]]

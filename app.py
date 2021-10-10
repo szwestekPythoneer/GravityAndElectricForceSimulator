@@ -1,16 +1,10 @@
-import numpy as np
 import app_utils
 import physical_utils
 import objects
 import graphic
-particles = [objects.Object(np.array([325, 350, 350]), physical_utils.evToKg(937e6), -physical_utils.e,
-                            np.array([0, 0, 0]), 'yellow'),
-             objects.Object(app_utils.chooseRandomPosition(), physical_utils.evToKg(511e3), physical_utils.e,
-                            app_utils.chooseRandomSpeed(), 'blue'),
-             objects.Object(np.array([975, 350, 350]), physical_utils.evToKg(937e6), -physical_utils.e,
-                            np.array([0, 0, 0]), 'yellow'),
-             objects.Object(app_utils.chooseRandomPosition(), physical_utils.evToKg(511e3), physical_utils.e,
-                            app_utils.chooseRandomSpeed(), 'blue')]
+features = ((937e6, -physical_utils.e, 'yellow'), (511e3, physical_utils.e, 'blue'))
+particles = [objects.Object(app_utils.chooseRandomPosition(), app_utils.chooseMassLoadColor (features))
+             for i in range (0, 100)]
 graphic.show(particles)
 graphic.screen.update()
 while True:
