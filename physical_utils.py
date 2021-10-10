@@ -1,6 +1,6 @@
 import math
 import math_utils
-G = 1  # 6.6743015e-11
+G = 100  # 6.6743015e-11
 c = 30  # 29.9792458
 k = -1000000  # -8.99e9
 miZero = 1e-7
@@ -15,10 +15,10 @@ def gravityAcc (itsMass, myPosition, itsPosition):
     return G * itsMass * rVectorOne / rScalarSquared
 
 
-def potentialEnergy (myLoad, itsLoad, myPosition, itsPosition):
+def potentialEnergy (myLoad, itsLoad, myPosition, itsPosition, constant=G):
     rVector = math_utils.rVector(itsPosition, myPosition)
     rScalarSquared = math_utils.rScalarSquared(rVector)
-    return k * itsLoad * myLoad * rVector / rScalarSquared
+    return constant * itsLoad * myLoad * rVector / rScalarSquared
 
 
 def energyToMass (energy):

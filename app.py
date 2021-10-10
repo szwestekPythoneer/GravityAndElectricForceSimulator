@@ -11,7 +11,7 @@ features = ((1, -physical_utils.e, 'white'),
 
 
 particles = [objects.Object(app_utils.chooseRandomPosition(), app_utils.chooseMassLoadColor (features))
-             for i in range (0, 4)]
+             for i in range (0, 100)]
 
 
 energyMemory = energy_counters.EnergyCounter()

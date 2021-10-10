@@ -19,7 +19,7 @@ class EnergyCounter:
         for particle in objects:
             for element in objects:
                 if objects.index (particle) != objects.index (element):
-                    self.Ep = self.Ep + physical_utils.potentialEnergy(particle.load, element.load, particle.position,
+                    self.Ep = self.Ep + physical_utils.potentialEnergy(particle.mass, element.mass, particle.position,
                                                                        element.position)
         self.Ep = math_utils.rScalar(self.Ep)
 
