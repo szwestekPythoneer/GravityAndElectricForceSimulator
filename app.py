@@ -26,8 +26,10 @@ graphic.screen.update()
 while True:
     app_utils.countAcc(particles)
     energyMemory.count_potential_energy(particles)
+    energyMemory.count_kinetic_energy(particles)
     graphic.screen.delete (energyMemory.graphicRepr)
-    energyMemory.graphicRepr = graphic.show_text(int(physical_utils.evToKg(energyMemory.E0)), energyMemory.Ep)
+    energyMemory.graphicRepr = graphic.show_text(int(physical_utils.evToKg(energyMemory.E0)), energyMemory.Ep,
+                                                 energyMemory.Ek)
     graphic.move (particles)
     graphic.countSize(particles)
     graphic.screen.update ()

@@ -6,7 +6,7 @@ import physical_utils
 class EnergyCounter:
     def __init__(self):
         self.Ep = None
-        self.Ek = None
+        self.Ek = 0
         self.E0 = 0
         self.graphicRepr = None
 
@@ -20,5 +20,12 @@ class EnergyCounter:
             for element in objects:
                 if objects.index (particle) != objects.index (element):
                     self.Ep = self.Ep + physical_utils.potentialEnergy(particle.load, element.load, particle.position,
-                                                              element.position)
+                                                                       element.position)
         self.Ep = math_utils.rScalar(self.Ep)
+
+    def count_kinetic_energy (self, objects):
+        self.Ek = 0
+        for particle in objects:
+            speed = math_utils.rScalar(particle.speed)
+            energy = physical_utils.speedToEnergy(particle.mass, speed)
+            self.Ek += energy
