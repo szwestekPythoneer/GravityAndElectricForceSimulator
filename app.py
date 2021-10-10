@@ -23,6 +23,7 @@ graphic.screen.update()
 
 
 while True:
+    app_utils.countTotalEnergy(particles)
     app_utils.countAcc(particles)
     energyMemory.count_potential_energy(particles)
     energyMemory.count_kinetic_energy(particles)

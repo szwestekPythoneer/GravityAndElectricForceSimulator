@@ -1,6 +1,6 @@
 import math
 import math_utils
-G = 100  # 6.6743015e-11
+G = 0.01  # 6.6743015e-11
 c = 30  # 29.9792458
 k = -1000000  # -8.99e9
 miZero = 1e-7

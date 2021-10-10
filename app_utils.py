@@ -13,7 +13,7 @@ def countAcc (particles):
         acc = np.array([0, 0, 0])
         for element in particles:
             if particles.index(particle) != particles.index(element):
-                acc = acc + physical_utils.gravityAcc(element.mass, particle.position, element.position)
+                acc = acc + physical_utils.gravityAcc(element.total_energy, particle.position, element.position)
             speedScalar = math_utils.rScalar(particle.speed)
             gamma3 = physical_utils.kineticDilatation(speedScalar) ** 3
             acc = acc * gamma3
@@ -29,6 +29,14 @@ def chooseMassLoadColor(data):
 
 
 def chooseRandomSpeed():
-    return np.array ([random.randint(0, 1) / 100,
-                      random.randint(0, 1) / 100,
-                      random.randint(0, 1) / 100])
+    return np.array ([random.randint(0, 1) / 10,
+                      random.randint(0, 1) / 10,
+                      random.randint(0, 1) / 10])
+
+
+def countTotalEnergy (objects):
+    for particle in objects:
+        particle.total_energy = 0
+        particle.total_energy += physical_utils.massToEnergy(particle.mass)
+        speed = math_utils.rScalar(particle.speed)
+        particle.total_energy += physical_utils.speedToEnergy(particle.mass, speed)

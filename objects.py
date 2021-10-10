@@ -14,3 +14,4 @@ class Object:
             self.speed = app_utils.chooseRandomSpeed()
         self.graphicRepr = None
         self.size = 5
+        self.total_energy = None
